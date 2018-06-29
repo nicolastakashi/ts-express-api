@@ -1,5 +1,5 @@
 {
-  "name": "ts-express-api",
+  "name": "susanatorres",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,8 +7,10 @@
     "build": "tsc",
     "watch": "tsc -w",
     "tslint": "tslint -c tslint.json -p tsconfig.json",
-    "dev": "nodemon --inspect dist/index.js",
-    "debug": "yarn build && yarn serve-debugg"
+    "serve-debug": "nodemon --inspect dist/index.js",
+    "predev": "yarn docs",
+    "dev": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"yarn watch\" \"npm run serve-debug\"",
+    "docs": "rm -rf apidoc && apidoc -f 'src/*.routes.*\\.ts$' -i ./ -o apidoc/"
   },
   "author": "",
   "license": "ISC",
@@ -26,8 +28,11 @@
     "@types/node": "^10.5.1",
     "@types/passport": "^0.4.5",
     "@types/passport-facebook": "^2.1.8",
+    "@types/passport-jwt": "^3.0.1",
     "@types/passport-local": "^1.0.33",
+    "@types/raven": "2.5.1",
     "@types/request": "^2.47.1",
+    "apidoc": "^0.17.6",
     "concurrently": "^3.6.0",
     "node-sass": "^4.9.0",
     "nodemon": "^1.17.5",
@@ -44,6 +49,13 @@
     "helmet": "^3.12.1",
     "moment": "^2.22.2",
     "morgan": "^1.9.0",
-    "passport": "^0.4.0"
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "raven": "^2.6.3"
+  },
+  "apidoc": {
+    "title": "Sétima API",
+    "name": "Susana Torres",
+    "url": "https://localhost:3000"
   }
 }

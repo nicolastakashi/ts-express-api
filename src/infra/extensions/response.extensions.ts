@@ -1,10 +1,12 @@
 import ResponseEnvelope from '../../shared/model/envelope.response';
 
-const success = (data: Object) =>
-  this.send(ResponseEnvelope.create(data, true));
+function success(data: Object) {
+  return this.send(ResponseEnvelope.create(data, true));
+}
 
-const error = (message: String) =>
-  this.send(ResponseEnvelope.create(null, false, message));
+function error(message: string) {
+  return this.send(ResponseEnvelope.create(null, false, message));
+}
 
 export default {
   success,
