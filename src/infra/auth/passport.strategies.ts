@@ -9,7 +9,7 @@ const jwt = async (payload: Object, done: Function) => {
   try {
     // const user = await userRepository.findById(payload.sub);
     // if (user) return done(null, { payload, user });
-    return done(null, false);
+    return done(undefined, false);
   } catch (error) {
     return done(error, false);
   }

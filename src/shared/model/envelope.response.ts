@@ -4,7 +4,7 @@ class ResponseEnvelope {
   public message: String;
 
   static create = (
-    data: Object = null,
+    data: Object = undefined,
     success: Boolean,
     message: String = ''
   ) => new ResponseEnvelope(data, success, message);
