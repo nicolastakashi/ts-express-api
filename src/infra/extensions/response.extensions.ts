@@ -5,7 +5,7 @@ function success(data: Object) {
 }
 
 function error(message: string) {
-  return this.send(ResponseEnvelope.create(null, false, message));
+  return this.send(ResponseEnvelope.create(undefined, false, message));
 }
 
 export default {

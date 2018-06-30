@@ -14,7 +14,7 @@ const handleJWT = (
 
   try {
     if (error || !user) throw error;
-    logIn(user, { session: false }, null);
+    logIn(user, { session: false }, undefined);
   } catch (e) {
     return next(e);
   }
